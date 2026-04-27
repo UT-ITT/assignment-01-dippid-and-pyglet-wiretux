@@ -104,6 +104,11 @@ def spawnEnemy():
             vx, vy = -1, randomDirection
 
     enemySprite = pyglet.sprite.Sprite(img=enemyKind, x=spawnX, y=spawnY)
+    
+    # normalize velocity
+    length = (vx**2 + vy**2) ** 0.5
+    vx = vx / length
+    vy = vy / length
 
     enemySprite.vx = vx
     enemySprite.vy = vy
